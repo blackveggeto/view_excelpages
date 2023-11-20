@@ -1,0 +1,42 @@
+.main{
+    margin: 1% 6% 1%;
+}
+
+#a-navbar, #a-li-navbar, #link-nabvar, #drop-navbar{
+    color: #edf1f4;
+}
+
+#button-search{
+    margin-left: 70%;
+}
+.main-flex{
+    margin-top: 3%;
+    display: flex;
+    gap: 3%;
+}
+
+.elements{
+    flex: 1;
+    height: 650px;
+    flex-basis: 10px; 
+    background-color: #edf1f4;
+    overflow-y: auto;
+}
+
+.table-data{
+    flex: 2;
+    height: 650px;
+    flex-basis: 700px;
+    background-color: #edf1f4;
+    justify-content: center;
+    overflow-x: auto;
+    overflow-y: auto;
+}
+
+.link-a:hover{
+    color: #fb4558;
+}
+
+#id-scroll{
+    overflow-x: auto;
+}

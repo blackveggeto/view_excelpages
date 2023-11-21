@@ -14,8 +14,6 @@ function handleFile(e) {
     const sheetContent = workbook.Sheets;
     excel = workbook.Sheets;
     const sheetListContainer = document.getElementById("sheet-list");
-
-    mostrarTabla(sheetContent.AGE_Actualizar_Datos,0);
     
     sheetListContainer.innerHTML = `<h3>Lista de hojas:</h3><ul class='list-group'>`;
 

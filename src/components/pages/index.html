@@ -75,7 +75,7 @@
   <body>
     <nav class="navbar navbar-expand-lg bg-primary" data-bs-theme="dark">
       <div class="container-fluid">
-        <a id="a-navbar" class="navbar-brand" href="#">LFAT</a>
+        <a id="a-navbar" class="navbar-brand" href="#">MADE BY FELIPE A.T</a>
         <button
           class="navbar-toggler"
           type="button"
@@ -153,7 +153,6 @@
         </div>
 
         <div class="table-data">
-          <h3>Elementos de la tabla</h3>
         </div>
       </div>
     </div>
@@ -163,6 +162,7 @@
       document.getElementById("input").addEventListener("change", handleFile);
       let listaDeCadenas = [];
       let excel;
+      let arrayExcel;
 
       function handleFile(e) {
         const file = e.target.files[0];
@@ -176,9 +176,10 @@
           const sheetContent = workbook.Sheets;
           excel = workbook.Sheets;
           const sheetListContainer = document.getElementById("sheet-list");
-
+          // console.log('sheetContent: ',sheetContent)
+          arrayExcel = Object.keys(sheetContent).map(key => key);
+          mostrarTabla(arrayExcel[0]);
           sheetListContainer.innerHTML = `<h3>Lista de hojas:</h3><ul class='list-group'>`;
-
           sheetList.forEach((sheetName) => {
             sheetListContainer.innerHTML += `<li class='list-group-item list-group-item-primary'>
         <a class='link-a' id='element-${number}' href='#' onclick='mostrarTabla(${JSON.stringify(
@@ -196,17 +197,8 @@
       }
 
       function mostrarTabla(sheet, condition) {
-        if (condition === 0) {
-          console.log("lo tiene ", sheet);
-        } else {
-          console.log("no lo tiene ", sheet, "-", condition);
-          //console.log(excel.AGE_Actualizar_Datos)
+          console.log("que trae", sheet);
           sheet = excel[sheet];
-          //console.log(excel[sheet])
-        }
-
-        console.log(sheet);
-        console.log(excel);
         if ($.fn.DataTable.isDataTable(".table")) {
           $(".table").DataTable().destroy();
         }
